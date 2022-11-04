@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class ListComponent implements OnInit {
 
-  myProp:string = 'Hello World!';
+  myProp: string = 'Hello World!';
 
   // constructor() {
   //   setTimeout(() => {
@@ -31,6 +31,6 @@ export class ListComponent implements OnInit {
   ngOnInit(): void { ///Lifecycle hook
   }
 
-
+  showLastName = false;
 
 }
