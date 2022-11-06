@@ -1,7 +1,12 @@
 <p id="title">This is interpolation: {{myProp}}</p>
 <ul class="list-cpntainer">
     <li *ngFor="let user of users" class="list-item" >
-        <ng-container>{{user.firstName}} </ng-container>
-        <ng-container *ngIf="showLastName">{{user.lastName}}</ng-container>
+       <app-list-item [user]="user" [showLastName] = "showLastName"></app-list-item>
     </li>
 </ul>
+<!-- Event handler -->
+<button (click)="handleClickEvent($event)">
+  <ng-container *ngIf="!showLastName">Show</ng-container> 
+  <ng-container *ngIf="showLastName">Hide</ng-container> 
+  Last Name
+</button>

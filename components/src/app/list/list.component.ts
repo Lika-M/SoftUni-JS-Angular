@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class ListComponent implements OnInit {
 
-  myProp: string = 'Hello World!';
+  public myProp: string = 'Hello World!';
+  showLastName:boolean = true;
 
   // constructor() {
   //   setTimeout(() => {
@@ -28,9 +29,13 @@ export class ListComponent implements OnInit {
     }
   ]
 
-  ngOnInit(): void { ///Lifecycle hook
+  ngOnInit(): void {           ///Lifecycle hook
   }
 
-  showLastName = false;
+  handleClickEvent (event: MouseEvent){
+    this.showLastName = ! this.showLastName
+    console.log(event)
+  }
+
 
 }
