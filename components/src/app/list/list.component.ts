@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
+const myStaticNumber: number = 4;
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 
-
 export class ListComponent implements OnInit {
 
   public myProp: string = 'Hello World!';
-  showLastName:boolean = true;
+  showLastName: boolean = true;
 
   // constructor() {
   //   setTimeout(() => {
@@ -32,10 +33,11 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {           ///Lifecycle hook
   }
 
-  handleClickEvent (event: MouseEvent){
-    this.showLastName = ! this.showLastName
+  handleClickEvent(event: MouseEvent) {
+    this.showLastName = !this.showLastName
     console.log(event)
   }
 
+  public staticNum = myStaticNumber;
 
 }

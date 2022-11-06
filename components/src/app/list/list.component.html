@@ -1,7 +1,13 @@
 <p id="title">This is interpolation: {{myProp}}</p>
 <ul class="list-cpntainer">
     <li *ngFor="let user of users" class="list-item" >
-       <app-list-item [user]="user" [showLastName] = "showLastName"></app-list-item>
+       <app-list-item 
+       [user]="user" 
+       [showLastName] = "showLastName" 
+       staticString="Static string"
+       [staticNum]="staticNum">
+
+       </app-list-item>
     </li>
 </ul>
 <!-- Event handler -->
