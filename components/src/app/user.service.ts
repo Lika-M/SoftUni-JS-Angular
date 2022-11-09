@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { myStringInjectionToken } from './app.module';
 import { IUser } from './interfaces/user';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
 
   users = [
@@ -17,7 +18,9 @@ export class UserService {
     }
   ];
 
-  constructor() { }
+  constructor(@Inject(myStringInjectionToken) myString: string) {
+    console.log(myString)
+   }
 
   addNewUserHandler(newUser: IUser){
     //lifecycle hook ngOnChange ==>
