@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, SimpleChanges, } from '@angular/core';
 import { IUser } from '../interfaces/user';
 
 const myStaticNumber: number = 4;
@@ -6,7 +6,8 @@ const myStaticNumber: number = 4;
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class ListComponent implements OnInit {

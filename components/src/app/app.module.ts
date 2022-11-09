@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import { UserService } from './user.service';
 
 @NgModule({
   // Template specific items
@@ -17,7 +18,11 @@ import { ListItemComponent } from './list-item/list-item.component';
     BrowserModule, //this includes CommonModule
     AppRoutingModule
   ],
-  providers: [], // Used for Dependency injection
+  providers: [{ // Used for Dependency injection
+    provide: UserService,
+    useClass: UserService
+  }],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
