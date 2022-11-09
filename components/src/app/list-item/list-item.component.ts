@@ -1,4 +1,5 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { IUser } from '../interfaces/user';
 
 
 
@@ -10,15 +11,8 @@ import { Component, Input} from '@angular/core';
 
 export class ListItemComponent {
 
- 
-
-  @Input() user!: {firstName:string, lastName:string}
-  @Input() showLastName!:boolean;
-  @Input() staticString!: string;
-  @Input() staticNum!: number;
-  
+  @Input() user!: IUser;
 
   constructor() { }
 
-  
 }

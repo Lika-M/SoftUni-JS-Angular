@@ -1,4 +1,8 @@
-#title{
+#title {
     color: red;
     font-size: 25px;
+}
+
+app-list-item {
+    display: block;
 }

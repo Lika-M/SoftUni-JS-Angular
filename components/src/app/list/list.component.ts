@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { IUser } from '../interfaces/user';
 
 const myStaticNumber: number = 4;
 
@@ -10,8 +11,9 @@ const myStaticNumber: number = 4;
 
 export class ListComponent implements OnInit {
 
-  public myProp: string = 'Hello World!';
-  showLastName: boolean = true;
+  @Input() users!: IUser[];
+  @Output() addUser = new EventEmitter<IUser>();
+
 
   // constructor() {
   //   setTimeout(() => {
@@ -19,25 +21,29 @@ export class ListComponent implements OnInit {
   //   }, 3000)
   //  }
 
-  users = [
-    {
-      firstName: 'John',
-      lastName: 'Doe'
-    },
-    {
-      firstName: 'Mary',
-      lastName: 'Greenwood'
-    }
-  ]
-
   ngOnInit(): void {           ///Lifecycle hook
+    console.log(this.users);
+    // debugger;
   }
 
-  handleClickEvent(event: MouseEvent) {
-    this.showLastName = !this.showLastName
-    console.log(event)
+  ngOnChanges(simpleChanges: SimpleChanges): void {
+    console.log(simpleChanges);
+    // debugger;
   }
+
+  addNewUser(firstNameInput: HTMLInputElement, ageInput: HTMLInputElement): void {
+    const { value: firstName } = firstNameInput;
+    const { valueAsNumber: age } = ageInput;
+
+    this.addUser.emit({firstName, age})
+
+    firstNameInput.value = '';
+    ageInput.value = '';
+  }
+
 
   public staticNum = myStaticNumber;
+
+
 
 }

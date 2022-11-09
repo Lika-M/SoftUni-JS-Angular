@@ -1,2 +1,4 @@
 <h1 id="title">APP COMPONENT</h1>
-<app-list></app-list>
+<div>
+    <app-list [users]="users" (addUser)="addNewUserHandler($event)"></app-list>
+</div>
