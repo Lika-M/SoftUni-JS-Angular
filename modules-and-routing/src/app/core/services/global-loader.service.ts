@@ -7,7 +7,7 @@ export class GlobalLoaderService {
 
   constructor() { }
 
-  title: string | null = null;
+  title: string | null = 'HELLO!';
 
   showLoader(title: string): void {
     this.title = title;
