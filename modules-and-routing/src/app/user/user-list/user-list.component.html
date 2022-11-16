@@ -1,5 +1,8 @@
-<div id="user-list-container">
-    <div *ngFor="let user of users">
-        {{user.username}}
+<div class="container">
+    <button (click)="loadUsersHandler()">Load Users</button>
+    <div id="user-list-container">
+        <div *ngFor="let user of users">
+            {{user.username}}
+        </div>
     </div>
 </div>

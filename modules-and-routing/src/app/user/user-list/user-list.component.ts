@@ -15,9 +15,13 @@ export class UserListComponent implements OnInit {
   constructor(
     private userService: UserService,
     private globalLoaderService: GlobalLoaderService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
+    this.loadUsers()
+  }
+
+  loadUsers():void{
     this.globalLoaderService.showLoader('Loading users...');
     this.userService.loadUsers().subscribe({
 
@@ -25,8 +29,13 @@ export class UserListComponent implements OnInit {
         this.globalLoaderService.hideLoader();
         this.users = users;
       }
-      
+
     });
   }
+
+  loadUsersHandler(){
+    this.loadUsers()
+  }
+
 
 }
