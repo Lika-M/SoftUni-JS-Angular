@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
+import { ActivatedRoute } from '@angular/router';
+// import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-details', // changed selector
@@ -8,11 +9,14 @@ import { UserService } from '../user.service';
 })
 export class UserDetailsComponent implements OnInit { // and changed class name
 
-  constructor(userService: UserService) { }
+  constructor(private activatedRoute: ActivatedRoute) {  // service (to get params) used only in components
+    console.log(this.activatedRoute.snapshot.params) // without dynamic changes like previous>> and next>>
+    this.activatedRoute.params.subscribe(console.log) //used with
+  }
 
   ngOnInit(): void {
   }
 
-  
+
 
 }

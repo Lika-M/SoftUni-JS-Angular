@@ -20,7 +20,7 @@ import { UserDetailsComponent } from './details/details.component';
         component: UserListComponent
       },
       {
-        path: 'user/details',
+        path: 'user/details/:id',
         component: UserDetailsComponent
       }
     ])
